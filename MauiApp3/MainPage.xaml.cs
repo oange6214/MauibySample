@@ -19,5 +19,26 @@ namespace MauiApp3
         {
             Navigation.PushAsync(new HStackDemo());
         }
+
+        private void GridBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new GridDemo());
+        }
+
+        private void OnCalc_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CalcDemo());
+        }
+
+        private void FlexBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FlexDemo());
+        }
+
+        private void AbsoluteBtn_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AbsoluteDemo());
+        }
+        
     }
 }

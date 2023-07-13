@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp3.Views.CalcDemo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CalcDemo"
+    BackgroundColor="#512BD4">
+
+    <Grid
+        Padding="16"
+        ColumnDefinitions="*, *, *, *"
+        ColumnSpacing="2"
+        RowDefinitions="*, *, *, *, *, *"
+        RowSpacing="2">
+
+        <Entry
+            x:Name="entry"
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            FontSize="22"
+            HorizontalTextAlignment="End"
+            IsReadOnly="True"
+            MaxLength="10"
+            Placeholder="0" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Clicked="SignChangeClicked"
+            FontSize="22"
+            Text="x/-" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Clicked="OnOperatorClicked"
+            FontSize="22"
+            Text="/" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Clicked="ClearClicked"
+            FontSize="22"
+            Text="C" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="3"
+            Clicked="OnOperatorClicked"
+            FontSize="22"
+            Text="*" />
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="7" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="8" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="2"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="9" />
+        <Button
+            Grid.Row="2"
+            Grid.Column="3"
+            Clicked="OnOperatorClicked"
+            FontSize="22"
+            Text="-" />
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="0"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="4" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="1"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="5" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="6" />
+        <Button
+            Grid.Row="3"
+            Grid.Column="3"
+            Clicked="OnOperatorClicked"
+            FontSize="22"
+            Text="+" />
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="0"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="1" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="2" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="3" />
+        <Button
+            Grid.Row="4"
+            Grid.RowSpan="2"
+            Grid.Column="3"
+            Clicked="EqualClicked"
+            FontSize="22"
+            Text="=" />
+
+        <Button
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Clicked="NumberClicked"
+            FontSize="22"
+            Text="0" />
+        <Button
+            Grid.Row="5"
+            Grid.Column="2"
+            Clicked="DecimalClicked"
+            FontSize="22"
+            Text="." />
+
+
+
+    </Grid>
+</ContentPage>
