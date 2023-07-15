@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp4.Views.ControlDemo"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="ControlDemo">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="10">
+            <!--  1. Imagebutton  -->
+            <ImageButton
+                x:Name="imgBtn"
+                Clicked="imgBtn_Clicked"
+                Source="dotnet_bot.svg" />
+
+            <!--  2. Button  -->
+            <Button
+                x:Name="btn"
+                Clicked="btn_Clicked"
+                HorizontalOptions="Center"
+                Text="Alert" />
+
+            <Label x:Name="infoLabel" Margin="5" />
+
+            <!--  3. Search bar  -->
+            <SearchBar x:Name="searchBar" SearchButtonPressed="searchBar_SearchButtonPressed" />
+
+            <!--  4. RadioButton  -->
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged"
+                Content="Man"
+                GroupName="serGrp"
+                Value="Man" />
+            <RadioButton
+                CheckedChanged="RadioButton_CheckedChanged"
+                Content="Woman"
+                GroupName="serGrp"
+                Value="Woman" />
+
+            <!--  5. CheckBox  -->
+            <HorizontalStackLayout>
+                <CheckBox
+                    CheckedChanged="CheckBox_CheckedChanged"
+                    VerticalOptions="Center"
+                    Color="Blue" />
+                <Label Text="Do you like this tutorial" />
+            </HorizontalStackLayout>
+
+            <!--  6. Switch (Toggle)  -->
+            <HorizontalStackLayout>
+                <Switch
+                    IsToggled="True"
+                    OnColor="Blue"
+                    ThumbColor="Purple"
+                    Toggled="Switch_Toggled"
+                    VerticalOptions="Center" />
+
+                <Label Text="You like this tutorial" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <!--  7. SwipeView  -->
+            <SwipeView>
+                <!--
+                    Can show menu items when swipe is to the
+                    Left:   LeftItems
+                    Right:  RightItems
+                    Down:   TopItems
+                    Up:     Bottom Items
+                -->
+
+                <SwipeView.LeftItems>
+                    <SwipeItem
+                        BackgroundColor="LightGreen"
+                        IconImageSource="favorite.svg"
+                        Invoked="SwipeItem_Invoked"
+                        Text="Favorite" />
+                    <SwipeItem
+                        BackgroundColor="LightPink"
+                        IconImageSource="delete.svg"
+                        Invoked="SwipeItem_Invoked_1"
+                        Text="Favorite" />
+                </SwipeView.LeftItems>
+
+                <Grid
+                    Background="white"
+                    HeightRequest="60"
+                    WidthRequest="300">
+                    <Image HorizontalOptions="Start" Source="cat.png" />
+                </Grid>
+            </SwipeView>
+
+            <!--  8. Slider  -->
+            <Slider
+                x:Name="slider"
+                Maximum="50"
+                MaximumTrackColor="Blue"
+                Minimum="0"
+                MinimumTrackColor="Cyan"
+                ThumbColor="Purple"
+                ValueChanged="slider_ValueChanged" />
+            <Label x:Name="sliderLabel" />
+
+            <!--  9. Stepper  -->
+            <Stepper
+                x:Name="stepper"
+                Increment="1"
+                Maximum="50"
+                Minimum="0"
+                ValueChanged="stepper_ValueChanged" />
+            <Label x:Name="stepperLabel" />
+
+            <!--  10. DataPicker  -->
+            <DatePicker
+                Date="{x:Static sys:DateTime.Now}"
+                MaximumDate="{x:Static sys:DateTime.Now}"
+                MinimumDate="12/21/1990" />
+
+            <!--  11. TimePicker  -->
+            <TimePicker Time="12:00:00" />
+
+            <!--  12. Entry  -->
+            <!--
+                TextChanged: Triggers event when interaction occurs
+                Completed: Triggers event when enter is clicked
+                MaxLength: Define max number of characters
+                CharactersSpacing: Define distance bettween characters
+                CursorPosition: Defines position of cursor (Default 0)
+                TextTransform: Lowercase, Uppercase
+                IsPassword: Set to "true" if needed
+                Keyboard: Default, Email, Numberic, Telephone, Url, Chat
+                ReturnType: Customizes enter button Done, Go, Next, Search, Send
+                IsReadOnly: if set to true it blocks entry
+            -->
+            <Entry
+                x:Name="entry"
+                ClearButtonVisibility="WhileEditing"
+                Completed="entry_Completed"
+                IsSpellCheckEnabled="True"
+                IsTextPredictionEnabled="True"
+                Placeholder="Enter Name" />
+
+            <!--  13. Editor  -->
+            <Editor AutoSize="TextChanges" Placeholder="Just some random words" />
+
+            <!--  14. ListView  -->
+            <ListView
+                x:Name="Steelers"
+                ItemSelected="Steelers_ItemSelected"
+                ItemsSource="{Binding MyPlayers}"
+                RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Image}" Text="{Binding Name}">
+                            <ImageCell.ContextActions>
+                                <MenuItem
+                                    Command="{Binding Path=BindingContext.DeletePlayerCommand, Source={Reference Steelers}}"
+                                    CommandParameter="{Binding .}"
+                                    IsDestructive="True"
+                                    Text="Delete" />
+                            </ImageCell.ContextActions>
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--  15. CarouselView  -->
+            <CarouselView ItemsSource="{Binding MyPlayers}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                Margin="5"
+                                CornerRadius="5"
+                                HasShadow="True"
+                                HeightRequest="250"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand">
+                                <StackLayout>
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Anton-Regular.ttf"
+                                        FontSize="Large"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Name}"
+                                        VerticalOptions="Center" />
+                                    <Image
+                                        Aspect="Fill"
+                                        HeightRequest="150"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding Image}"
+                                        WidthRequest="150" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <!--  16. Icon  -->
+            <StackLayout>
+                <Label
+                    FontFamily="Icons"
+                    FontSize="Large"
+                    Text="&#xE800;" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
