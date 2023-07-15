@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp7.MVVM.Views.PageThree"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="PageThree">
+
+    <VerticalStackLayout Margin="20" Spacing="20">
+        <Button Clicked="Button_Clicked" Text="Page 2" />
+    </VerticalStackLayout>
+</ContentPage>

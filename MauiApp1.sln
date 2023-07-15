@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp5", "MauiApp5\MauiAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp6", "MauiApp6\MauiApp6.csproj", "{DC97EB17-42C0-43F5-958F-C554B1CC07BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiApp7", "MauiApp7\MauiApp7.csproj", "{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,12 @@ Global
 		{DC97EB17-42C0-43F5-958F-C554B1CC07BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC97EB17-42C0-43F5-958F-C554B1CC07BF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC97EB17-42C0-43F5-958F-C554B1CC07BF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2857D34-44B5-42E4-BAEC-EC71BD9B120D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
