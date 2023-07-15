@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp6.MVVM.Views.CustomerView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="CustomerView">
+
+    <VerticalStackLayout Margin="20">
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.Name}"
+            VerticalOptions="Start" />
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.Street}"
+            VerticalOptions="Start" />
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.City}"
+            VerticalOptions="Start" />
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.State}"
+            VerticalOptions="Start" />
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.ZipCode}"
+            VerticalOptions="Start" />
+        <Label
+            FontSize="25"
+            HorizontalOptions="Start"
+            Text="{Binding Customer.Phone}"
+            VerticalOptions="Start" />
+        <HorizontalStackLayout Spacing="20">
+            <Label
+                FontSize="25"
+                HorizontalOptions="Start"
+                Text="When to Call"
+                VerticalOptions="Center" />
+            <TimePicker
+                FontSize="25"
+                Time="{Binding Customer.ContactTime}"
+                VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label
+                FontSize="25"
+                HorizontalOptions="Start"
+                Text="Active Customer"
+                VerticalOptions="Center" />
+            <Switch
+                IsToggled="{Binding Customer.ActiveCustomer}"
+                OnColor="Orange"
+                ThumbColor="Green"
+                VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Spacing="20">
+            <Label
+                FontSize="25"
+                HorizontalOptions="Start"
+                Text="Birthday"
+                VerticalOptions="Center" />
+            <DatePicker
+                Date="{Binding Customer.BirthDay}"
+                FontSize="25"
+                VerticalOptions="Center" />
+
+        </HorizontalStackLayout>
+
+
+        <HorizontalStackLayout Spacing="20">
+            <Label
+                FontSize="25"
+                HorizontalOptions="Start"
+                Text="Current Balance"
+                VerticalOptions="Center" />
+            <Entry
+                FontSize="25"
+                Text="{Binding Customer.Balance}"
+                VerticalOptions="Center" />
+
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
