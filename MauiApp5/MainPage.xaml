@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp5.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:MauiApp5.Models">
+
+    <ContentPage.Resources>
+        <Models:Player
+            x:Key="player"
+            Name="Najee Harris"
+            Info="Selected to the Pro Bowl as a rookie in 2021" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <!--  Example 2 : Xaml Binding  -->
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{Binding Name, Source={StaticResource player}}" />
+
+            <!--  Example 1 : Code behide Binding  -->
+            <Label
+                x:Name="lblName"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="" />
+
+            <!--  Example 3 : BindingContent  -->
+            <Label
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="{Binding Name}" />
+
+            <Label
+                FontSize="18"
+                HorizontalOptions="Start"
+                Text="{Binding Info}" />
+
+            <Button
+                x:Name="CounterBtn"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center"
+                Text="Click me" />
+
+            <!--  Example 4 : Binding Between Controls  -->
+            <Label
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{Binding Source={x:Reference slider}, Path=Value}" />
+
+            <Slider
+                x:Name="slider"
+                Maximum="50"
+                Minimum="0" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
